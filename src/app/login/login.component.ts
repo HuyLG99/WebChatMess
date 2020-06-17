@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     ) { }
   
-  ngOnInit(): void {
+  ngOnInit(): void{
   }
 
   loginEmailPass(){
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       }
   async loginwithGoogle(){
     await this.authService.loginwithGoogle();
-    this.router.navigate(['/home']);
+    this.router.navigate(['/newcustomer']);
   }
 
 }

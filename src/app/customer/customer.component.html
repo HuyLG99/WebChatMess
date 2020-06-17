@@ -11,8 +11,8 @@
       <div class="form-group">
         <label>Email</label>
         <input formControlName="email" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.email.errors}">
-        <div class="invalid-feedback" *ngIf="submitted && formControls.email.errors">
-          Invalid email address.</div>
+        <div class="invalid-feedback" *ngIf="submitted && formControls.email.errors"></div>
+          <label *ngIf="formControls.mobile.errors.required"> Invalid email address.</label>
       </div>
       <div class="form-group">
         <label>Mobile</label>
