@@ -23,8 +23,15 @@ import { CustomerComponent } from './customer/customer.component';
 import { LoginComponent } from './login/login.component';
 import { SliedbarComponent } from './sliedbar/sliedbar.component';
 // import { AngularFireDatabaseModule } from '@angular/fire/database/public_api';
-
-
+// Toastr module
+import { CommonModule } from '@angular/common';
+import{ToastrModule} from 'ngx-toastr'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { from } from 'rxjs';
+import { AuthGuard } from './shared/guards/auth.guard';
+import { RegisterComponent } from './register/register.component';
+import { RegisterNodeJSComponent } from './register-node-js/register-node-js.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 // @NgModule decorator with its metadata
@@ -37,7 +44,9 @@ import { SliedbarComponent } from './sliedbar/sliedbar.component';
     CustomerListComponent,
     CustomerComponent,
     LoginComponent,
-    SliedbarComponent
+    SliedbarComponent,
+    RegisterComponent,
+    RegisterNodeJSComponent
   ],
   imports: [
     BrowserModule,
@@ -48,8 +57,13 @@ import { SliedbarComponent } from './sliedbar/sliedbar.component';
     // AngularFirestoreModule,
     // AngularFireAuthModule,
     AngularFireDatabaseModule, //for database
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    CommonModule,
+    HttpClientModule,
+   
   ],
-  providers: [CustomerService, AuthService],
+  providers: [CustomerService, AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

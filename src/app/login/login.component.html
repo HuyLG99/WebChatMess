@@ -1,55 +1,35 @@
- <div class="container">
-
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
-
-      <div class="col-xl-10 ">
-
-        <div class="card o-hidden border-0 shadow-lg my-5">
-          <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                  </div>
-                  <form class="user">
-                    <div class="form-group">
-                      <input type="email" [(ngModel)]="email"  class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
-                    </div>
-                    <div class="form-group">
-                      <input [(ngModel)]="password" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
-                      </div>
-                    </div>
-                    <a href="./main" class="btn btn-primary btn-user btn-block">
-                      Login
-                    </a>
-                    <hr>
-                    <a  class="btn btn-google btn-user btn-block">
-                      <button type="button" class="btn btn-danger btn-block" (click)="this.loginwithGoogle()">Login with Google</button> 
-                    </a>
-                    <button  (click)="this.loginEmailPass()">Login Email </button>
-                  </form>
-                  <hr>
-                  <div class="text-center">
-                    <a class="small" href="forgot-password.html">Forgot Password?</a>
-                  </div>
-                  <div class="text-center">
-                    <a class="small" href="register.html">Create an Account!</a>
-                  </div>
+<div class="container">
+    <div class="row justify-content-center p-4">
+       
+        <div class="col-md-6">
+            <form class="form-group" (ngSubmit)="login()">
+                <div class="text-center">
+                    <h1 style="color: white;">Welcome Back!</h1>
                 </div>
-              </div>
-            </div>
-          </div>
+            <h3 style="color: white;">Firebase and Google Login</h3>
+            <div class="form-group p-2">
+            <input type="email" name="email" class="form-control" [(ngModel)]="email" placeholder="Enter email" required>
         </div>
+        <div class="form-group p-2">
+            <input type="password" name="password" class="form-control" [(ngModel)]="password" placeholder="Enter Password" required>
+        </div>
+        <div class="form-group p-2">
+            <button type="submit" class="btn btn-primary btn-block" (click)="this.login()">Login with FireBase</button>
+            <hr>
+            <button type="button" class="btn btn-danger btn-block" (click)="this.loginwithGoogle()">Login with Google</button> 
 
-      </div>
-
+        </div>
+        </form>
+        <div class="form-group p-2">
+            <p *ngIf="errorMessage.length > 0" class="text-danger">
+                {{errorMessage}}</p>
+        
+            <p *ngIf="error.message.length > 0" class="text-danger">
+                {{error.message}} </p>
+        
+           
+        </div>
+        </div>
+        
     </div>
-  </div>
+</div>

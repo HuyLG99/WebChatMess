@@ -7,7 +7,7 @@ import { from } from 'rxjs';
 
 @Injectable()
 export class AuthService {
-
+  authState: any = null;
 constructor(
 private afAuth: AngularFireAuth,
 private router: Router
@@ -36,6 +36,19 @@ async loginwithGoogle()  {
   
 }
 
+async login(email:string,password:string){
+	try{
+		const result = await this.afAuth.signInWithEmailAndPassword(
+			email,password
+		);
+		return result;
+	}
+	
+	catch(error)
+	{
+		console.log(error);
+	}	
+}
 //Tương tự viết hàm signin với tài khoản firebase như sau:
 siginFirebase(email: string, password: string){
   return new Promise<any>((resolve, reject) => {
@@ -46,8 +59,41 @@ siginFirebase(email: string, password: string){
     }, err => reject(err))
   })
 }
- async siginWithEmailAndPass(email: string, password: string){
-   let user = await this.afAuth.signInWithEmailAndPassword(email,password)
-   console.log(user);
- }
+
+
+registerWithEmail(email: string, password: string) {
+  return this.afAuth.createUserWithEmailAndPassword(email, password)
+    .then((user) => {
+      this.authState = user
+    })
+    .catch(error => {
+      console.log(error)
+      throw error
+    });
 }
+
+loginWithEmail(email: string, password: string)
+  {
+    return this.afAuth.signInWithEmailAndPassword(email, password)
+      .then((user) => {
+        this.authState = user
+      })
+      .catch(error => {
+        console.log(error)
+        throw error
+      });
+  }
+ logout(){
+  return new Promise<any>((resolve,reject)=>{
+    if (this.afAuth.currentUser){
+    this.afAuth.signOut();
+    resolve("log out");
+    }else{
+    reject();
+    }
+
+  })
+}
+}
+
+

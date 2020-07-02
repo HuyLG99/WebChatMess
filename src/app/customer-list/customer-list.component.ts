@@ -1,6 +1,5 @@
 import { CustomerService } from './../shared/customer.service';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
@@ -40,6 +39,7 @@ export class CustomerListComponent implements OnInit {
 
   filterCondition(customer) {
     return customer.fullName.toLowerCase().indexOf(this.searchText.toLowerCase()) !== -1;
+    
   }
 
 }

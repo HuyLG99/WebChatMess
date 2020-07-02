@@ -6,14 +6,16 @@
     <thead>
     <th>Full Name</th>
     <th>Email</th>
-    <th>Mobile</th>
+    <th>Mobile</th> 
+ 
     <th></th>
     </thead>
     <ng-container *ngFor="let customer of customerArray">
-      <tr class="table-dark" style="border-color: black;" *ngIf="filterCondition(customer)">
+      <tr class="table" style="color: white;; background-color: black;" *ngIf="filterCondition(customer)">
         <td>{{customer.fullName}}</td>
         <td>{{customer.email}}</td>
         <td>{{customer.mobile}}</td>
+       
         <td>
             <button class="btn btn-outline-info" (click)="customerService.populateForm(customer)">Edit</button>
             <button class="btn btn-outline-danger" (click)="onDelete(customer.$key)">Delete</button>
