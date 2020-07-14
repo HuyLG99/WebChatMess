@@ -16,7 +16,11 @@
         <div class="form-group p-2">
             <button type="submit" class="btn btn-primary btn-block" (click)="this.login()">Login with FireBase</button>
             <hr>
+            <button type="button" class="btn btn-primary btn-block" [routerLink]="['/register']">Register with FireBase</button>
+            <hr>
             <button type="button" class="btn btn-danger btn-block" (click)="this.loginwithGoogle()">Login with Google</button> 
+           
+           
 
         </div>
         </form>
