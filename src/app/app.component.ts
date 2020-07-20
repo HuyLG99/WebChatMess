@@ -3,25 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
-
+const config = {
+  apiKey:'AIzaSyCmZCk6ujdOwxlv74t19KcfnmpLNakfqmU',
+  databaseURL: 'https://chatmess-f2ce6.firebaseio.com/'
+}; 
 export interface Itemadd { id: string; name: string; }
-
-// @Component({
-//   selector: 'app-root',
-//   templateUrl: './app.component.html',
-//   styleUrls: ['./app.component.css']
-// })
-// export class AppComponent  implements OnInit{
-//   title = 'AngularProject';
-//   constructor (){}
-
-//   ngOnInit()
-//   {
-//     new createPiechart();
-//   }
-// }
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html' ,

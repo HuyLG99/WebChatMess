@@ -1,22 +1,24 @@
 import { LoginComponent } from './login/login.component';
-import { CustomerComponent } from './customer/customer.component';
-import { CustomerListComponent } from './customer-list/customer-list.component';
 import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main/main.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { RegisterComponent } from '././register/register.component';
-import { RegisterNodeJSComponent } from './register-node-js/register-node-js.component'
+import { AddroomComponent } from './addroom/addroom.component';
+import { ChatroomComponent } from './chatroom/chatroom.component';
+import { RoomlistComponent } from './roomlist/roomlist.component';
+import { AddnickComponent } from './addnick/addnick.component';
 import { from } from 'rxjs';
 
 const routes: Routes =  [
   { path: 'main', component: MainComponent},
-  { path: 'home', component: HomeComponent, canActivate:[AuthGuard]},
-  { path: 'customer', component: CustomerListComponent ,canActivate:[AuthGuard] },
-  { path: 'newcustomer', component: CustomerComponent,canActivate:[AuthGuard] },
+  { path: 'roomlist', component: RoomlistComponent },
+  { path: 'addroom', component: AddroomComponent },
+  { path: 'addnick', component: AddnickComponent },
+  { path: 'chatroom/:roomname', component: ChatroomComponent },
+  { path: 'home', component: HomeComponent},
   { path: 'register', component: RegisterComponent },
-  { path: 'registerNodeJS', component: RegisterNodeJSComponent,canActivate:[AuthGuard] },
   { path: '', component: LoginComponent },
 ];
 

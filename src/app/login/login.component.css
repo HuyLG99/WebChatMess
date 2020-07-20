@@ -1,0 +1,111 @@
+/* .container{
+    padding: 120px;
+} */
+
+body {
+    background: #3b5997;
+    padding: 0;
+    margin: 0;
+    font-family: 'Manjari', sans-serif;
+    overflow-x: hidden;
+    }
+    h1{
+    text-transform: uppercase;
+    padding-top: 20px;
+    }
+    .btn-custom {
+    background: #2a4784;
+    color: #fff;
+    }
+    .btn.focus,
+    .btn:focus {
+    box-shadow: none;
+    }
+    .btn-custom:hover {
+    color: #fff;
+    background: #223a6d;
+    }
+    .container {
+    box-shadow: 1px 0 10px 15px rgba(0, 0, 0, .3);
+    background: linear-gradient(to bottom, #3b5997 0%, #3b5997 50%, #000000 50%, #ddd 50%, #ddd 100%);
+    padding: 10px 0 15px 0px;
+    }
+    .center-content {
+    display: block;
+    margin: 20px auto;
+    width: 40%;
+    }
+    .float-right .form-control {
+    border-radius: 0px;
+    width: 35% !important;
+    }
+    .center-content .form-control {
+    outline: none;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0px !important;
+    }
+    .center-content .form-control:focus,
+    .center-content .form-control:hover {
+    border: none;
+    margin: 0 auto;
+    background: none;
+    box-shadow: none;
+    border-bottom: 1px solid #AAB7B8;
+    }
+    .form-group {
+    margin-top: 25px;
+    }
+    @media(max-width: 992px){
+    h2{
+    text-align: center;
+    }
+    .center-content{
+    width: 60%;
+    }
+    }
+    @media(max-width: 768px){
+    h2{
+    text-align: center;
+    }
+    .center-content{
+    width: 60%;
+    }
+    .form-inline{
+    display: block;
+    text-align: center;
+    float: none !important;
+    }
+    }
+    @media(max-width: 575px){
+    .pl-5{
+    padding-left: 0 !important;
+    }
+    .center-content{
+    width: 80%;
+    }
+    .float-right .form-control{
+    width: 100% !important;
+    margin-top: 15px;
+    }
+    .float-right .form-control:nth-child(2){
+    margin-bottom: 15px;
+    }
+    .container{
+    background: linear-gradient(to bottom, #3b5997 0%, #3b5997 60%, #000000 50%, #ddd 52%, #ddd 100%);
+    max-width: 80%;
+    }
+    }
+    @media(max-width: 425px){
+    h3,h2{
+    font-size: 1.5rem;
+    }
+    h1{
+    text-align: center;  
+    font-size: 2rem;
+    }
+    h2{
+    margin: 0;
+    }
+    }

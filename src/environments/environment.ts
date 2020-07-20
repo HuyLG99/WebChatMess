@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyAxxqRL3TljA8fCN8xTtk5Q7ROC45Ww2wA",
-  authDomain: "angularweb-faa9a.firebaseapp.com",
-  databaseURL: "https://angularweb-faa9a.firebaseio.com",
-  projectId: "angularweb-faa9a",
-  storageBucket: "angularweb-faa9a.appspot.com",
-  messagingSenderId: "92191893014",
-  appId: "1:92191893014:web:e87bdfd240158946a53737"
+    apiKey: "AIzaSyCmZCk6ujdOwxlv74t19KcfnmpLNakfqmU",
+    authDomain: "chatmess-f2ce6.firebaseapp.com",
+    databaseURL: "https://chatmess-f2ce6.firebaseio.com",
+    projectId: "chatmess-f2ce6",
+    storageBucket: "chatmess-f2ce6.appspot.com",
+    messagingSenderId: "933848455661",
+    appId: "1:933848455661:web:352500ba35794f41c52fe4"
   }
 };
 

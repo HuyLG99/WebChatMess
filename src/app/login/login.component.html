@@ -1,12 +1,12 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row justify-content-center p-4">
        
         <div class="col-md-6">
             <form class="form-group" (ngSubmit)="login()">
                 <div class="text-center">
-                    <h1 style="color: white;">Welcome Back!</h1>
+                    <h1 style="color: black;">Welcome Back!</h1>
                 </div>
-            <h3 style="color: white;">Firebase and Google Login</h3>
+            <h3 style="color: black;">Firebase and Google Login</h3>
             <div class="form-group p-2">
             <input type="email" name="email" class="form-control" [(ngModel)]="email" placeholder="Enter email" required>
         </div>
@@ -14,7 +14,7 @@
             <input type="password" name="password" class="form-control" [(ngModel)]="password" placeholder="Enter Password" required>
         </div>
         <div class="form-group p-2">
-            <button type="submit" class="btn btn-primary btn-block" (click)="this.login()">Login with FireBase</button>
+            <button type="submit" class="btn btn-primary btn-block"  (click)="this.login()">Login with FireBase</button>
             <hr>
             <button type="button" class="btn btn-primary btn-block" [routerLink]="['/register']">Register with FireBase</button>
             <hr>
@@ -36,4 +36,34 @@
         </div>
         
     </div>
+</div> -->
+<div class="container mt-5 mb-5">
+    <div class="row p-4">
+      <div class="col-lg-7 col-md-12">
+        <h2 class="text-white pl-5">M.E.S.S.E.N.G.E.R</h2>
+      </div>
+      <div class="col-lg-5 col-md-12">
+        <form class="form-inline float-right" (ngSubmit)="login()" action="#">
+          <input type="email" name="email" class="form-control" [(ngModel)]="email" placeholder="Enter email" required>
+          <input type="password" name="password" class="form-control" [(ngModel)]="password" placeholder="Enter Password" required>
+          <button type="button" class="btn btn-custom" (click)="this.login()">Login</button>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="text-center text-white">
+          <h3>Welcome To M.E.S.S.E.N.G.E.R</h3>
+          <p class="mb-0">The World Biggest Social Network</p>
+        </div>
+      </div>
+     
+    </div>
+    <div class="row bg-white center-content">
+      <div class="col-lg-12 p-4">
+        <h1 style="text-align: center;">Sign Up</h1>
+           <app-register></app-register>
+      </div>
+    </div>
+    
 </div>
