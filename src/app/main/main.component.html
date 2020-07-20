@@ -27,6 +27,22 @@
                         </div>
                     </div>
                 </li>
+
+                <div *ngFor="let user of listOfOnLineUser">
+                    <li>
+                        <div class="d-flex bd-highlight">
+                            <div class="img_cont">
+                                <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img">
+                                <span class="online_icon"></span>
+                            </div>
+                            <div class="user_info">
+                                <h1>{{user.onTime}}</h1>
+                                <span>{{user.email}} 31232132132131</span>
+                                <p>{{user.email}} is online</p>
+                            </div>
+                        </div>
+                    </li>
+                </div>
                 <li>
                     <div class="d-flex bd-highlight">
                         <div class="img_cont">

@@ -3,7 +3,7 @@ import { User } from './interface/user';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
-import { from } from 'rxjs';
+import { from, Observable, Subscriber, BehaviorSubject } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DocumentReference } from '@angular/fire/firestore';
 
@@ -172,12 +172,12 @@ onLineNotificatiopn(emailzzz:string){
 
 }
 
-userOnLineList:any[];
+userOnLineList = new BehaviorSubject([]);
 
 listenForStatus(myEmail:string){
   firebase.database().ref("status/").on("value",(ref)=>{
     let temperUserList = [];
-    this.userOnLineList = [];
+    // this.userOnLineList = [];
     // Caculate user onLinbeStust
     ref.forEach((userTime)=>{
       let userData = userTime.val();
@@ -192,11 +192,12 @@ listenForStatus(myEmail:string){
     })
 
     ///
-    this.userOnLineList = temperUserList;
-    console.log(this.userOnLineList);
+    this.userOnLineList.next(temperUserList)
+    console.log(temperUserList);
     temperUserList = [];
   })
 }
+
 
 keepMyStatus(){
   setInterval(()=>{

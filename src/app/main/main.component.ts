@@ -24,10 +24,19 @@ export class MainComponent implements OnInit {
   nickname = '';
   ref = firebase.database().ref('users/');
   matcher = new MyErrorStateMatcher();
-
+  listOfOnLineUser = [];
   constructor(public authService: AuthService, public router: Router) { }
 
   ngOnInit(): void {
+
+    this.authService.userOnLineList.subscribe(data=>{
+      let temperuser = [];
+      data.forEach((person)=>{
+        temperuser.push(person)
+      })
+      this.listOfOnLineUser = temperuser
+      console.log(this.listOfOnLineUser);
+    })
   }
   Logout(){
     this.authService.logout();
